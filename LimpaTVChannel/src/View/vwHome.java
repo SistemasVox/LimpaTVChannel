@@ -27,14 +27,11 @@ public class vwHome extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-    private JLabel lblA, lblQ;
     private JButton bntMontar, btnLimpar, btnSalvar;
     private static JTextArea txtArea;
     private JTextArea txtRefe;
     private JTextArea txtEntrada;
     private JScrollPane scrollQ, scrollA, scrollArea;
-    //private String[] ae = {"A", "B", "C", "D", "E"};
-    //private String[] eliminar = {" ", ")"};
     private String referencia = "";
     private ArrayList<String> listaCanais = new ArrayList<String>();
     private JButton btnSair;
@@ -59,14 +56,6 @@ public class vwHome extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
-        lblQ = new JLabel("Q:");
-        lblQ.setHorizontalAlignment(SwingConstants.RIGHT);
-        lblQ.setBounds(851, 19, 63, 14);
-        contentPane.add(lblQ);
-        lblA = new JLabel("A:");
-        lblA.setHorizontalAlignment(SwingConstants.RIGHT);
-        lblA.setBounds(851, 43, 63, 14);
-        contentPane.add(lblA);
         JLabel lblInsertQuestesSistemasvox = new JLabel("Limpa Listas TV Channers, Sistema VOX.");
         lblInsertQuestesSistemasvox.addMouseListener(new MouseAdapter() {
         	@Override
@@ -90,23 +79,11 @@ public class vwHome extends JFrame {
         txtRefe = new JTextArea();
         txtRefe.setLineWrap(true);
         txtRefe.setWrapStyleWord(true);
-        txtRefe.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent arg0) {
-                bloquearBotao();
-            }
-        });
         txtRefe.setFont(new Font("Monospaced", Font.ITALIC, 14));
         txtRefe.setToolTipText("Search for:");
         contentPane.add(this.scrollQ = new JScrollPane(txtRefe));
         scrollQ.setBounds(10, 60, 907, 118);
         txtEntrada = new JTextArea();
-        txtEntrada.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                bloquearBotao();
-            }
-        });
         txtEntrada.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 14));
         txtEntrada.setLineWrap(true);
         txtEntrada.setWrapStyleWord(true);
@@ -137,13 +114,14 @@ public class vwHome extends JFrame {
         contentPane.add(bntMontar);
         btnSalvar.setBounds(752, 460, 159, 46);
         contentPane.add(btnSalvar);
-        JButton btnListar = new JButton("Tentativa BRUTA");
-        btnListar.setEnabled(false);
+        JButton btnListar = new JButton("Salvar Referencia");
         btnListar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+            	salvarReferencia();
+            	lerReferencia();
             }
         });
-        btnListar.setBounds(752, 513, 159, 46);
+        btnListar.setBounds(752, 570, 159, 46);
         contentPane.add(btnListar);
         JButton btnExpor = new JButton("Exportar HTML");
         btnExpor.addActionListener(new ActionListener() {
@@ -151,18 +129,16 @@ public class vwHome extends JFrame {
                 exportarHTML();
             }
         });
-        btnExpor.setBounds(752, 570, 159, 46);
+        btnExpor.setBounds(752, 513, 159, 46);
         contentPane.add(btnExpor);
         btnSair = new JButton("Sair");
         btnSair.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                salvarReferencia();
             }
         });
         btnSair.setBounds(752, 627, 159, 46);
         contentPane.add(btnSair);
-        bloquearBotao();
 		lerReferencia();
 		txtRefe.setText(referencia.trim());
     }
@@ -249,6 +225,9 @@ public class vwHome extends JFrame {
     protected void limparS() {
         String[] alternativas;
         listaCanais.clear();
+		while (txtEntrada.getText().indexOf("\n\n") != -1) {
+			txtEntrada.setText(txtEntrada.getText().replaceAll("\n\n", "\n").trim());			
+		}
         alternativas = txtEntrada.getText().split(Pattern.quote("\n"));
         for (int i = 0; i < alternativas.length; i++) {
             listaCanais.add(alternativas[i]);
@@ -263,25 +242,8 @@ public class vwHome extends JFrame {
         }
         txtArea.setText(txt);
     }
-
-    static void exportarCSV(String separador, String texto) {
-        File arquivo = new File("Questões.csv");
-        File arquivo2 = new File("Alternativas.csv");
-        if (arquivo.exists() && arquivo2.exists()) {
-            JOptionPane.showMessageDialog(null, "Exportação realizada com sucesso, verifique no caminho:\n" + arquivo.getAbsoluteFile() + "\n" + arquivo2.getAbsoluteFile());
-            txtArea.setText("Exportação realizada com sucesso, verifique no caminho:\n" + arquivo.getAbsoluteFile() + "\n" + arquivo2.getAbsoluteFile());
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro na exportação" + arquivo.getAbsoluteFile() + "\n" + arquivo2.getAbsoluteFile());
-        }
-    }
-
-    private void bloquearBotao() {
-    }
-
     protected void limpar() {
-        //txtEntrada.setText("");
-        txtRefe.setText("");
+        txtEntrada.setText("");
         txtArea.setText("");
-        bloquearBotao();
     }
 }

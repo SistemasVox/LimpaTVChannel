@@ -1,0 +1,29 @@
+Referências:
+
+Filmes <3:
+
+1) "fonte.iptvmaishd.com:25461": http://streamtv.com.br/get.php?username=damiao&password=damiao&type=m3u
+2) "lista.red:8880": http://lista.red:8880/get.php?username=osmar&password=osmar&type=m3u
+
+Canais:
+
+1) "srvpremium.co:8080": http://srvpremium.co:8080/Ivan/Ivan/56633
+2) "br1.e-tv.xyz:8081": http://br1.e-tv.xyz:8081/live/i/i/4194.m3u8
+3) "purpleserver.net:80": http://purpleserver.net:80/4NXsryE6fZ/2863954338/18483
+4) "xx2.servelive.net:80": http://xx2.servelive.net/get.php?username=Emiliano&password=12345&type=m3u PRO
+5) "lista.digitalgroup.me:80": http://lista.digitalgroup.me:80/jo03/jo03/2383 
+6) "painel.ebanonet.com.br:25461": http://painel.ebanonet.com.br:25461/Ariel34/Ariel34/4312 PRO
+7) "lista.g5iptv.space:8080": http://lista.g5iptv.space:8080/camila/camila/58723 PRO
+8) "maxptv.ddns.net:25461": http://maxptv.ddns.net:25461/ana/ana/19
+9) "clienteworld.com:8080": http://clienteworld.com:8080/Denis/123/8240
+10) "server.globalhd.ml:8080": http://server.globalhd.ml:8080/get.php?username=jonas&password=jonas&type=m3u
+
+
+Só filmes:
+
+1) "cdn1.tvaberta.ml:8080": tv_channels_kleber
+
+Referências:
+1) http://iptvhit.com/freeiptv
+2) https://www.iptvbin.com +
+3) https://www.freeiptv-box.com/
