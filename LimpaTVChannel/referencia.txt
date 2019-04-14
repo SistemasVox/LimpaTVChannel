@@ -17,6 +17,7 @@ Canais:
 8) "maxptv.ddns.net:25461": http://maxptv.ddns.net:25461/ana/ana/19
 9) "clienteworld.com:8080": http://clienteworld.com:8080/Denis/123/8240
 10) "server.globalhd.ml:8080": http://server.globalhd.ml:8080/get.php?username=jonas&password=jonas&type=m3u
+11) "viptv2.dyndns.tv:2086" : http://viptv2.dyndns.tv:2086/get.php?username=kronos&password=1234&type=m3u
 
 
 Só filmes:

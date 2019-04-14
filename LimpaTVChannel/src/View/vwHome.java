@@ -114,7 +114,7 @@ public class vwHome extends JFrame {
         contentPane.add(bntMontar);
         btnSalvar.setBounds(752, 460, 159, 46);
         contentPane.add(btnSalvar);
-        JButton btnListar = new JButton("Salvar Referencia");
+        JButton btnListar = new JButton("Salvar Refer\u00EAncia");
         btnListar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
             	salvarReferencia();
@@ -167,7 +167,7 @@ public class vwHome extends JFrame {
 			
 			String linha = lerArq.readLine();
 			while (linha != null) {
-		        System.out.printf("%s\n", linha);
+		        //System.out.printf("%s\n", linha);
 		        referencia += "\n"+ linha;
 		        linha = lerArq.readLine();
 		      }
@@ -180,11 +180,30 @@ public class vwHome extends JFrame {
 
 	protected void limparSPRO() {
     	listaCanais.clear();
-    	String[] eliminar = txtEntrada.getText().split("m3u");
-    	for (int i = 0; i < eliminar.length; i++) {
-			listaCanais.add(eliminar[i]+"m3u");
-		}
+    	criarListas(txtEntrada.getText().trim());
     	montarLista();				
+	}
+	
+	private void criarListas(String s) {
+		int i = 0;
+		while (s.substring(i, s.length()).toLowerCase().indexOf("http") != -1) {
+			if(s.substring(i, i + 4).toLowerCase().equals("http")) {
+				if (!s.substring(i, acharM3U(i, s)).isEmpty()) {
+					listaCanais.add(s.substring(i, acharM3U(i, s)));
+				}
+			}
+			i++;
+		}
+	}
+	private int acharM3U(int i, String s) {
+		if (s.substring(i, s.length()).indexOf("m3u") != -1) {
+			for (int j = i; j < s.length(); j++) {
+				if(s.substring(j, j + 3).toLowerCase().equals("m3u")) {
+					return j + 3;
+				}
+			}
+		}
+		return i;
 	}
 
 	protected void exportarHTML() {
