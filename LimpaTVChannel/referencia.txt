@@ -3,6 +3,9 @@ Referências:
 Filmes <3:
 
 1) "fonte.iptvmaishd.com:25461": http://streamtv.com.br/get.php?username=damiao&password=damiao&type=m3u
+http://fonte.iptvmaishd.com:25461/get.php?username=roma&password=roma&type=m3u
+IN: https://www.en.m3uiptv.com/iptv-links-free-m3u-playlist-21-04-2019/
+
 2) "lista.red:8880": http://lista.red:8880/get.php?username=osmar&password=osmar&type=m3u
 
 Canais:
