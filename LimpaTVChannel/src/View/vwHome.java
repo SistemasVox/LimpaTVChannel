@@ -227,9 +227,13 @@ public class vwHome extends JFrame {
     }
 
     private String pegaNomeLista(String link) {
-        int c = procurarPosicao(link, "=");
-        int f = procurarPosicao(link, "&");
-        return link.substring(c, f);
+    	try {
+            int c = procurarPosicao(link, "=");
+            int f = procurarPosicao(link, "&");
+            return link.substring(c, f);
+		} catch (Exception e) {
+			return link.substring(0, 10);
+		}
     }
 
     private int procurarPosicao(String link, String string) {
