@@ -21,6 +21,9 @@ Canais:
 9) "clienteworld.com:8080": http://clienteworld.com:8080/Denis/123/8240
 10) "server.globalhd.ml:8080": http://server.globalhd.ml:8080/get.php?username=jonas&password=jonas&type=m3u
 11) "viptv2.dyndns.tv:2086" : http://viptv2.dyndns.tv:2086/get.php?username=kronos&password=1234&type=m3u
+12) "cdn.ontvhdbr.co" : http://cdn.ontvhdbr.co:8880/get.php?username=carmela&password=carmela&type=m3u
+13) "samuraihd.com.br:80": http://samuraihd.com.br/get.php?username=1904&password=1904&type=m3u
+14) "51.15.15.119:8080": tv_channels_john ñ trava
 
 
 Só filmes:
@@ -31,3 +34,4 @@ Referências:
 1) http://iptvhit.com/freeiptv
 2) https://www.iptvbin.com +
 3) https://www.freeiptv-box.com/
+4) https://www.ar.m3uiptv.com/iptv-links-free-m3u-free-download-22-05-2019/
